@@ -33,7 +33,7 @@ requirements:
     - numpy
     - aiohttp
     - ordered-set
-    # - pyformlang
+    - pyformlang
 
 test:
   imports:
