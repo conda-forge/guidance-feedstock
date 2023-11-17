@@ -1,5 +1,5 @@
 {% set name = "guidance" %}
-{% set version = "0.0.64" %}
+{% set version = "0.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: baaee2c791fe853c920b5964661bb63155feb58f84c25e45f83c47f63c4e58dd
+  sha256: 435e7b8d4036e7d3256f3605a5504f9332735dbf02e3da5ccca7747eb83c3b0e
 
 build:
   noarch: python
@@ -22,7 +22,7 @@ requirements:
     - python >=3.6
     - diskcache
     - gptcache
-    - openai >=0.27.8
+    - openai >=1.0.0
     - pyparsing >=3.0.0
     - pygtrie
     - platformdirs
@@ -32,6 +32,8 @@ requirements:
     - requests
     - numpy
     - aiohttp
+    - ordered-set
+    - pyformlang
 
 test:
   imports:
