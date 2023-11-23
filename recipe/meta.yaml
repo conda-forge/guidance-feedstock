@@ -23,14 +23,13 @@ requirements:
     - diskcache
     - gptcache
     - openai >=1.0.0
-    - pyparsing >=3.0.0
-    - pygtrie
     - platformdirs
     - tiktoken >=0.3
     - nest-asyncio
     - msal
     - requests
     - numpy
+    - scipy
     - aiohttp
     - ordered-set
     - pyformlang
@@ -56,7 +55,7 @@ about:
     makes that structure easier and cheaper.
   license: MIT
   license_family: MIT
-  license_file: LICENSE
+  license_file: LICENSE.md
   dev_url: https://github.com/microsoft/guidance
 
 extra:
