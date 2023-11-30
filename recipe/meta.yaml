@@ -29,7 +29,6 @@ requirements:
     - msal
     - requests
     - numpy
-    - scipy
     - aiohttp
     - ordered-set
     - pyformlang
