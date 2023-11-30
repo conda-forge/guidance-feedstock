@@ -30,8 +30,8 @@ requirements:
     - requests
     - numpy
     - aiohttp
-    - ordered-set
     - pyformlang
+    - ordered-set
 
 test:
   imports:
