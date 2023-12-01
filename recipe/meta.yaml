@@ -1,5 +1,5 @@
 {% set name = "guidance" %}
-{% set version = "0.1.4" %}
+{% set version = "0.1.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: dd8f2c8fc2a27ccb4146c93d1ff4605e22a61701e4468a54e3334bbee3ec4031
+  sha256: 2fad8b21c1870d6bc0ce7319683a33731845738ecbf8760c34b64dd78935f810
 
 build:
   noarch: python
@@ -29,10 +29,9 @@ requirements:
     - msal
     - requests
     - numpy
-    - scipy
     - aiohttp
-    - ordered-set
     - pyformlang
+    - ordered-set
 
 test:
   imports:
