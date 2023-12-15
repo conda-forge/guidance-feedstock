@@ -1,5 +1,5 @@
 {% set name = "guidance" %}
-{% set version = "0.1.5" %}
+{% set version = "0.1.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2fad8b21c1870d6bc0ce7319683a33731845738ecbf8760c34b64dd78935f810
+  sha256: d70769c4e90332e1e3e7ac1aad3ad3ffd10139868d778671f584d6e57e025ad0
 
 build:
   noarch: python
