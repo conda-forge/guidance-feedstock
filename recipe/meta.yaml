@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 99921ef0176fe97565219334dc7246c483170c2fad22e0efd20f3e73490b43fb
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - diskcache
     - gptcache
     - openai >=1.0.0
@@ -38,6 +38,7 @@ test:
     - guidance
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
