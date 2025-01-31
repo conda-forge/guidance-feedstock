@@ -18,6 +18,7 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
+    - rust
   run:
     - python >={{ python_min }}
     # install_requires
@@ -49,20 +50,17 @@ test:
     - pip check
 
 about:
-  home: https://github.com/microsoft/guidance
-  summary: 'A guidance language for controlling large language models'
+  home: https://github.com/guidance-ai/guidance
+  summary: 'Guidance is an efficient programming paradigm for steering language models.'
   description: |
-    Guidance enables you to control modern language models more effectively and efficiently
-    than traditional prompting or chaining. Guidance programs allow you to interleave generation,
-    prompting, and logical control into a single continuous flow matching how the language model
-    actually processes the text. Simple output structures like Chain of Thought and its many
-    variants (e.g., ART, Auto-CoT, etc.) have been shown to improve LLM performance.
-    The advent of more powerful LLMs like GPT-4 allows for even richer structure, and guidance
-    makes that structure easier and cheaper.
+    With Guidance, you can control how output is structured and get high-quality output for
+    your use case—while reducing latency and cost vs. conventional prompting or fine-tuning.
+    It allows users to constrain generation (e.g. with regex and CFGs) as well as to interleave
+    control (conditionals, loops, tool use) and generation seamlessly.
   license: MIT
   license_family: MIT
   license_file: LICENSE.md
-  dev_url: https://github.com/microsoft/guidance
+  dev_url: https://github.com/guidance-ai/guidance
 
 extra:
   recipe-maintainers:
