@@ -19,6 +19,9 @@ requirements:
     - python {{ python_min }}
     - pip
     - rust
+    - setuptools>=42
+    - pybind11 >=2.10.0
+    - wheel
   run:
     - python >={{ python_min }}
     # install_requires
