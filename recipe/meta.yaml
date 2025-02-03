@@ -22,6 +22,8 @@ requirements:
     - setuptools >=42
     - pybind11 >=2.10.0
     - wheel
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib("c") }}
   run:
     - python >={{ python_min }}
     # install_requires
