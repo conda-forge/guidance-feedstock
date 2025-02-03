@@ -1,5 +1,5 @@
 {% set name = "guidance" %}
-{% set version = "0.1.5" %}
+{% set version = "0.1.14" %}
 
 package:
   name: {{ name|lower }}
@@ -7,31 +7,42 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2fad8b21c1870d6bc0ce7319683a33731845738ecbf8760c34b64dd78935f810
+  sha256: 99921ef0176fe97565219334dc7246c483170c2fad22e0efd20f3e73490b43fb
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install .[all] -vv
   number: 1
 
 requirements:
   host:
     - python {{ python_min }}
     - pip
+    - rust
+    - setuptools >=42
+    - pybind11 >=2.10.0
+    - wheel
+    - {{ compiler('cxx') }}
   run:
     - python >={{ python_min }}
+    # install_requires
     - diskcache
-    - gptcache
-    - openai >=1.0.0
-    - platformdirs
-    - tiktoken >=0.3
-    - nest-asyncio
-    - msal
-    - requests
     - numpy
-    - aiohttp
-    - pyformlang
     - ordered-set
+    - platformdirs
+    - pyformlang
+    - protobuf
+    - pydantic
+    - requests
+    - tiktoken >=0.3
+    # extra_requires
+    ## azureai, openai
+    - openai >=1.0.0
+    ## schemas
+    - jsonschema
+    ## server
+    - fastapi
+    - uvicorn
 
 test:
   imports:
@@ -43,20 +54,17 @@ test:
     - pip check
 
 about:
-  home: https://github.com/microsoft/guidance
-  summary: 'A guidance language for controlling large language models'
+  home: https://github.com/guidance-ai/guidance
+  summary: 'Guidance is an efficient programming paradigm for steering language models.'
   description: |
-    Guidance enables you to control modern language models more effectively and efficiently
-    than traditional prompting or chaining. Guidance programs allow you to interleave generation,
-    prompting, and logical control into a single continuous flow matching how the language model
-    actually processes the text. Simple output structures like Chain of Thought and its many
-    variants (e.g., ART, Auto-CoT, etc.) have been shown to improve LLM performance.
-    The advent of more powerful LLMs like GPT-4 allows for even richer structure, and guidance
-    makes that structure easier and cheaper.
+    With Guidance, you can control how output is structured and get high-quality output for
+    your use case—while reducing latency and cost vs. conventional prompting or fine-tuning.
+    It allows users to constrain generation (e.g. with regex and CFGs) as well as to interleave
+    control (conditionals, loops, tool use) and generation seamlessly.
   license: MIT
   license_family: MIT
   license_file: LICENSE.md
-  dev_url: https://github.com/microsoft/guidance
+  dev_url: https://github.com/guidance-ai/guidance
 
 extra:
   recipe-maintainers:
