@@ -19,7 +19,6 @@ variants (e.g., ART, Auto-CoT, etc.) have been shown to improve LLM performance.
 The advent of more powerful LLMs like GPT-4 allows for even richer structure, and guidance
 makes that structure easier and cheaper.
 
-
 Current build status
 ====================
 
@@ -155,4 +154,5 @@ Feedstock Maintainers
 =====================
 
 * [@johnhany97](https://github.com/johnhany97/)
+* [@rxm7706](https://github.com/rxm7706/)
 
