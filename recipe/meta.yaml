@@ -1,5 +1,5 @@
 {% set name = "guidance" %}
-{% set version = "0.1.5" %}
+{% set version = "0.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2fad8b21c1870d6bc0ce7319683a33731845738ecbf8760c34b64dd78935f810
+  sha256: 60fe7e308596aecb7676d9165a14630992ee3eeb48f0dd086ce2ea9d40e01ca8
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
